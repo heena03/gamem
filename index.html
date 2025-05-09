@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Memory Game">
+    <meta name="desctiption"
+        content="Memory Game - Cards Memory game with different topics: Pokemons, Robots or Profiles">
+    <meta name="keywords" content="Memory Game , Pokemon, Robots, Memory, Gamming,, Children, Game, Cards">
+    <meta name="theme-color" content="#c13b54" />
+    <link rel="apple-touch-icon" href="./assets/img/logo-white.png" />
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="icon" href="./assets/img/logo-white.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Memory Game</title>
+</head>
+
+<body onload="onInit(),onLoad()" onbeforeunload="onUnload()" class="main-layout">
+
+    <div class="offline full tac">Offline Mode</div>
+
+    <header class="main-header full flex align-center " id="top">
+        <button class="btn-menu-toggle" onclick="onToggleSettings()">☰</button>
+        <ul class="game-status clean-list flex space-around align-center">
+            <li class="time-left"></li>
+            <li class="moves"></li>
+            <li class="board-size"> </li>
+        </ul>
+    </header>
+
+    <aside class="settings tac">
+        <h1>Game settings</h1>
+        <ul class="settings-bar clean-list">
+            <!-- RENDER -->
+        </ul>
+    </aside>
+    <div class="settings-screen" onclick="onToggleSettings()"></div>
+
+    <div class="board-container"></div>
+
+    <canvas class="confetti" id="confetti"></canvas>
+
+    <div class="loading-screen"><img class="loading" src="./assets/img/logo-white.png"></div>
+
+
+    <section class="modal tac">
+        <!-- RENDER -->
+    </section>
+    <div class="modal-screen"></div>
+
+    <footer class="main-footer full tac">
+        <button onclick="takeTrail()"><a href="#top">Take Trail</a></button>
+        <button><a target="_blank" href="https://pokeapi.co/">Pokemon API</a></button>
+        <button><a target="_blank" href="https://robohash.org/">Robots API</a></button>
+        <button><a target="_blank" href="https://randomuser.me/">Profiles API</a></button>
+        <div class="footer-logo flex direction-col align-center">
+            <p>&copy; Memory Game by Heena Khatri</p>
+            <img src="./assets/img/logo.png" />
+        </div>
+        <div class="footer-desc">
+            <p>Frontend Vanilla Project - See Code Here:</p>
+            <ul class="social-links clean-list flex direction-row justify-center">
+                <li>
+                    <a target="_blank" href="https://github.com/Michael-Uzan/memory-game">
+                        <img src="./assets/img/github-logo.png" />
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/michael-uzan-ab637071/">
+                        <img src="./assets/img/linkedin-logo.png" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/serviceWorkerRegistation.js"></script>
+    <script src="data/board.data.js"></script>
+    <script src="data/game.data.js"></script>
+    <script src="js/controller/confetti.controller.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/service/storage.service.js"></script>
+    <script src="js/service/robot.service.js"></script>
+    <script src="js/service/people.service.js"></script>
+    <script src="js/service/pokemon.service.js"></script>
+    <script src="js/service/game.service.js"></script>
+    <script src="js/controller/trail.controller.js"></script>
+    <script src="js/controller/board.controller.js"></script>
+    <script src="js/controller/status.controller.js"></script>
+    <script src="js/controller/settings.controller.js"></script>
+</body>
+
+</html>
